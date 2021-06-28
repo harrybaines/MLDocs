@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+mkdocs-material = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
+
+[scripts]
+version = "mkdocs --version"
+help = "mkdocs --help"
+serve = "inv serve"
+build = "mkdocs build"
+deploy = "mkdocs gh-deploy"
