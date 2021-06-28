@@ -1,6 +1,4 @@
-# Welcome to MLDocs
-
-## Machine Learning Algorithms
+# Machine Learning Algorithms
 
 The algorithms and explanations listed here are intended to give a quick overview of how each algorithm works along with code examples to show how you can implement them. Library versions are provided along with the from-scratch implementations. Links to further resources are also given.
 
