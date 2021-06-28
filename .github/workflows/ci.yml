@@ -24,6 +24,7 @@ jobs:
             GH_REF="${{ github.event.pull_request.head.sha }}"
           fi
           echo "::set-output name=ref::${GH_REF}"
+          
   deploy:
     needs: prepare
     runs-on: ubuntu-20.04
