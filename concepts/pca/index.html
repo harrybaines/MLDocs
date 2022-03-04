@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://example.com/concepts/overfitting-underfitting/">
+        <link rel="canonical" href="https://example.com/concepts/pca/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.4">
     
     
       
-        <title>Overfitting/Underfitting - MLDocs</title>
+        <title>Principal Component Analysis - MLDocs</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overfittingunderfitting" class="md-skip">
+        <a href="#principal-component-analysis" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overfitting/Underfitting
+              Principal Component Analysis
             
           </span>
         </div>
@@ -279,6 +279,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../overfitting-underfitting/" class="md-nav__link">
+        Overfitting/Underfitting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -290,55 +304,10 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Overfitting/Underfitting
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Overfitting/Underfitting
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-overfitting" class="md-nav__link">
-    What is overfitting?
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pca/" class="md-nav__link">
         Principal Component Analysis
       </a>
+      
     </li>
   
 
@@ -416,21 +385,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-overfitting" class="md-nav__link">
-    What is overfitting?
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -443,25 +397,24 @@
                 
 
 
-<h1 id="overfittingunderfitting">Overfitting/Underfitting</h1>
-<h3 id="what-is-overfitting">What is overfitting?</h3>
-<p>Overfitting occurs when there is a large gap between the training error and the test error. In other words, it models the training data too well. It learns the noise in the training data, which negatively impacts the models generalisation ability.</p>
-<!-- Graph of overfitting/underfitting/"just right" -->
-<!-- Note: maybe actually run an experiment and create graphs of the overfitting models? -->
-<div align="center">
-<img src="../img/overfitting.jpg" width="550" />
+<h1 id="principal-component-analysis">Principal Component Analysis</h1>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">PCA using scikit-learn</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="linenos" data-linenos="2 "></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="linenos" data-linenos="5 "></span><span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos" data-linenos="6 "></span><span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="linenos" data-linenos="7 "></span>
+<span class="linenos" data-linenos="8 "></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Explained variance ratio: </span><span class="si">{</span><span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos" data-linenos="9 "></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Singular values: </span><span class="si">{</span><span class="n">pca</span><span class="o">.</span><span class="n">singular_values_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
 </div>
-
-<!-- ### What is underfitting? -->
-
-<!-- Graph of training/test error -->
-
-<!-- Bias/Variance tradeoff -->
-<!-- ### What is the bias/variance tradeoff? -->
-
-<!-- References: -->
-<!-- https://www.deeplearningbook.org/contents/ml.html -->
-<!-- https://machinelearningmastery.com/overfitting-and-underfitting-with-machine-learning-algorithms/ -->
+</div>
+<p>Useful References:</p>
+<ul>
+<li>sklearn docs: https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html</li>
+</ul>
 
               
             </article>
@@ -480,7 +433,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../norms/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Norms" rel="prev">
+        <a href="../overfitting-underfitting/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overfitting/Underfitting" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -489,20 +442,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Norms
+              Overfitting/Underfitting
             </div>
           </div>
         </a>
       
       
         
-        <a href="../pca/" class="md-footer__link md-footer__link--next" aria-label="Next: Principal Component Analysis" rel="next">
+        <a href="../../reinforcement-learning/" class="md-footer__link md-footer__link--next" aria-label="Next: Bellman Equation" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Principal Component Analysis
+              Bellman Equation
             </div>
           </div>
           <div class="md-footer__button md-icon">

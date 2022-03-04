@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://example.com/concepts/pca/</loc>
+         <lastmod>2022-03-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://example.com/reinforcement-learning/</loc>
          <lastmod>2022-03-04</lastmod>
          <changefreq>daily</changefreq>
