@@ -10,9 +10,12 @@ theme:
 extra_css:
   - stylesheets/extra.css
 markdown_extensions:
+  - tables
+  - pymdownx.details
   - admonition
   - attr_list
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true 
   - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
