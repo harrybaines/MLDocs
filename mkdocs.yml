@@ -2,13 +2,28 @@ site_name: MLDocs
 site_url: https://example.com/
 theme:
   name: material
+  custom_dir: overrides
+  font:
+    text: Open Sans
   features:
     - content.tabs.link
     - navigation.top
     - navigation.sections
-    - navigation.indexes
+    # - navigation.indexes
 extra_css:
   - stylesheets/extra.css
+nav:
+  - Home: index.md
+  - Algorithms:
+    - Linear Regression: algorithms/linear-regression/index.md
+    - Gradient Descent: algorithms/gradient-descent.md
+  - Concepts:
+    - Deep Learning Specialisation: concepts/dls-course-2.md
+    - Overfitting/Underfitting: concepts/overfitting-underfitting.md
+  - Equations:
+    - Norms: equations/norms.md
+  - Reinforcement Learning: 
+    - reinforcement-learning/index.md
 markdown_extensions:
   - admonition
   - attr_list
@@ -22,6 +37,6 @@ markdown_extensions:
       linenums: true
       linenums_style: pymdownx-inline
 extra_javascript:
-  - javascripts/config.js
+  - javascripts/extra.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
