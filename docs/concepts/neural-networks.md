@@ -25,8 +25,7 @@ then for a given layer $l$:
 
 $$
 \begin{align}
-\frac{\partial J_{0}}{\partial w^{(l)}}&=\frac{\partial J_{0}}{\partial a^{(l)}} \times \frac{\partial a^{(l)}}{\partial z^{(l)}} \times \frac{\partial z^{(l)}}{\partial w^{(l)}} \\
-&=\frac{\partial}{\partial a^{(l)}}(a^{(l)} - y)^2 \times \frac{\partial}{\partial z^{(l)}}\left(\frac{1}{1 + e^{-z^{(l)}}}\right) \times \frac{\partial}{\partial w^{(l)}}(w^{(l)} a^{(l-1)}+b^{(l)})  \\
+\frac{\partial J_{0}}{\partial w^{(l)}}&=\frac{\partial J_{0}}{\partial a^{(l)}} \times \frac{\partial a^{(l)}}{\partial z^{(l)}} \times \frac{\partial z^{(l)}}{\partial w^{(l)}} \\ \\
 &=2(a^{(l)} - y) \times \sigma(z^{(l)}) \times (1 - \sigma(z^{(l)})) \times a^{(l-1)}
 \end{align}
 $$
