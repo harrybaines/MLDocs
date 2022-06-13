@@ -17,6 +17,8 @@ nav:
   - Algorithms:
     - Linear Regression: algorithms/linear-regression/index.md
     - Gradient Descent: algorithms/gradient-descent.md
+  - Maths:
+    - Linear Algebra: maths/linear-algebra.md
   - Concepts:
     - Deep Learning Specialisation: concepts/dls-course-2.md
     - Overfitting/Underfitting: concepts/overfitting-underfitting.md
