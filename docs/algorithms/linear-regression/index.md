@@ -1,8 +1,4 @@
----
-title: Hi
----
-
-## Linear Regression
+Linear regression models take the following form:
 
 $$
 y = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + ... + \theta_n x_n

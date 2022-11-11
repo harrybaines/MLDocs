@@ -16,12 +16,9 @@ nav:
   - Home: index.md
   - Algorithms:
     - Linear Regression: algorithms/linear-regression/index.md
-    - Gradient Descent: algorithms/gradient-descent.md
-  - Definitions:
-    - Deep Learning: definitions/index.md
-  - Concepts:
-    - Deep Learning Specialisation: concepts/dls-course-2.md
-    - Overfitting/Underfitting: concepts/overfitting-underfitting.md
+    - PCA: algorithms/pca/index.md
+  - References:
+    - Deep Learning Specialisation Course 2: references/dls/course-2.md
   - Equations:
     - Norms: equations/norms.md
   - Reinforcement Learning: 

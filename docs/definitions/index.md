@@ -1,1 +1,0 @@
-Backpropagation (reverse-mode differentiation): 
