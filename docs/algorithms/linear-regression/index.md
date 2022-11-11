@@ -44,6 +44,46 @@ def lr_normal_train(X, y):
 !!! note "Normal Equation Complexity"
     In practice, it is best to avoid using the Normal Equation due to the computational complexity ($\mathrm{O}(\mathrm{n}^3)$) of inverting the matrix $\boldsymbol{\mathrm{X}}$. This means doubling the number of features increases computation time by $2^3 = 8$ times.
 
+
+###
+
+Goodness of fit (sum of squares of deviations of fit from the data):
+
+$$
+\chi^2 = \sum_i r_i^2 = \sum_i (y_i - mx_i - c)^2
+$$
+
+Want to minimise $\chi^2$, so differentiate and set to 0:
+
+$$
+\begin{equation}
+\nabla \chi^2=\left[\begin{array}{l}
+\frac{\partial \chi^2}{\partial m} \\
+\frac{\partial \chi^2}{\partial c}
+\end{array}\right]=\left[\begin{array}{l}
+-2 \sum_i x_i\left(y_i-m x_i-c\right) \\
+-2 \sum_i\left(y_i-m x_i-c\right)
+\end{array}\right]=\left[\begin{array}{l}
+0 \\
+0
+\end{array}\right]
+\end{equation}
+$$
+
+After some algebra we get:
+
+$$
+\begin{equation}
+\begin{array}{ll}
+m=\frac{\sum(x-\bar{x}) y}{\sum(x-\bar{x})^2} & \sigma_m^2 \simeq \frac{\chi^2}{\sum_i(x_i-\bar{x})^2(n-2)} \\
+c=\bar{y}-m \bar{x} & \sigma_c \simeq \sigma_m \sqrt{\bar{x}^2+\frac{1}{n} \sum_i(x_i-\bar{x})^2}
+\end{array}
+\end{equation}
+$$
+
+
+
+
 <!-- Give table overview comparison of pros and cons for normal equation etc. -->
 <!-- Custom diagrams and gifs -->
 <!-- !!! note "From scratch implementation"
