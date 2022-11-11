@@ -1,6 +1,6 @@
 # Principal Component Analysis
 
-=== "PCA using scikit-learn"
+=== "scikit-learn"
 
 	```python
 	from sklearn.decomposition import PCA
@@ -14,6 +14,6 @@
 	print(f'Singular values: {pca.singular_values_}')
 	```
 
-Useful References:
+References:
 
-- sklearn docs: https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html
+- [sklearn docs](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html){:target="_blank"}

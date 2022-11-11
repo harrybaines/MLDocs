@@ -3,13 +3,15 @@ site_url: https://example.com/
 theme:
   name: material
   custom_dir: overrides
+  palette:
+    primary: lime
+    scheme: slate
   font:
     text: Open Sans
   features:
     - content.tabs.link
     - navigation.top
     - navigation.sections
-    # - navigation.indexes
 extra_css:
   - stylesheets/extra.css
 nav:
