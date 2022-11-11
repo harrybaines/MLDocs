@@ -2,37 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://example.com/</loc>
-         <lastmod>2022-06-10</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/algorithms/gradient-descent/</loc>
-         <lastmod>2022-06-10</lastmod>
+         <lastmod>2022-11-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/algorithms/linear-regression/</loc>
-         <lastmod>2022-06-10</lastmod>
+         <lastmod>2022-11-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/concepts/dls-course-2/</loc>
-         <lastmod>2022-06-10</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/concepts/overfitting-underfitting/</loc>
-         <lastmod>2022-06-10</lastmod>
+         <loc>https://example.com/algorithms/pca/</loc>
+         <lastmod>2022-11-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/equations/norms/</loc>
-         <lastmod>2022-06-10</lastmod>
+         <lastmod>2022-11-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/maths/linear-algebra/</loc>
+         <lastmod>2022-11-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/references/dls/course-2/</loc>
+         <lastmod>2022-11-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/reinforcement-learning/</loc>
-         <lastmod>2022-06-10</lastmod>
+         <lastmod>2022-11-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

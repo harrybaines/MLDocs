@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://example.com/algorithms/gradient-descent/">
+        <link rel="canonical" href="https://example.com/maths/linear-algebra/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.3">
@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#vectors" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -90,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gradient Descent
+              Linear Algebra
             
           </span>
         </div>
@@ -189,16 +194,14 @@
 
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -221,7 +224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linear-regression/" class="md-nav__link">
+      <a href="../../algorithms/linear-regression/" class="md-nav__link">
         Linear Regression
       </a>
     </li>
@@ -233,19 +236,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Gradient Descent
+    <li class="md-nav__item">
+      <a href="../../algorithms/pca/" class="md-nav__link">
+        PCA
       </a>
-      
     </li>
   
 
@@ -276,14 +271,14 @@
       
       
         <label class="md-nav__link" for="__nav_3">
-          Concepts
+          References
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Concepts" data-md-level="1">
+      <nav class="md-nav" aria-label="References" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          Concepts
+          References
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -293,22 +288,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/dls-course-2/" class="md-nav__link">
-        Deep Learning Specialisation
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../concepts/overfitting-underfitting/" class="md-nav__link">
-        Overfitting/Underfitting
+      <a href="../../references/dls/course-2/" class="md-nav__link">
+        Deep Learning Specialisation Course 2
       </a>
     </li>
   
@@ -439,6 +420,41 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vectors" class="md-nav__link">
+    Vectors
+  </a>
+  
+    <nav class="md-nav" aria-label="Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalar-projection" class="md-nav__link">
+    Scalar Projection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-projection" class="md-nav__link">
+    Vector Projection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -451,9 +467,53 @@
                 
 
 
-  <h1>Gradient Descent</h1>
+  <h1>Linear Algebra</h1>
 
-
+<h2 id="vectors">Vectors</h2>
+<p>Size of a vector (modulus):</p>
+<div class="arithmatex">\[
+|\textbf{r}|= \sqrt{\sum_{i=1}^{n} r_i^2}
+\]</div>
+<p>Dot product of two vectors:</p>
+<div class="arithmatex">\[
+\textbf{r}.\textbf{s} = \sum_{i=1}^{n} r_1 s_1 + r_2 s_2 + ... + r_n s_n
+\]</div>
+<p>The dot product is:</p>
+<ul>
+<li>Commutative: <span class="arithmatex">\(\textbf{r}.\textbf{s} = \textbf{s}.\textbf{r}\)</span></li>
+<li>Distributive over addition: <span class="arithmatex">\(\textbf{r}.(\textbf{s}+\textbf{t}) = \textbf{r}.\textbf{s} + \textbf{r}.\textbf{t}\)</span></li>
+<li>Associative over scalar multiplication: <span class="arithmatex">\(\textbf{r}.(a \textbf{s}) = a (\textbf{r}.\textbf{s})\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\textbf{r}.\textbf{r} = \sum_{i=1}^n r_i^2 = \left(\sqrt{\sum_{i=1}^{n} r_i^2}\right)^2 = |\textbf{r}|^2
+\]</div>
+<p>i.e. the size of a vector is the square root of the dot product of the vector with itself.</p>
+<p>From the <a href="https://en.wikipedia.org/wiki/Law_of_cosines">cosine rule</a>:</p>
+<div class="arithmatex">\[
+\textbf{r}.\textbf{s}=|\textbf{r}||\textbf{s}|\cos \theta
+\]</div>
+<p>which tells us the extent to which the vectors go in the same direction. Therefore using the dot product, we can get the angle between the two vectors.</p>
+<p>If:</p>
+<ul>
+<li><span class="arithmatex">\(\theta = 0^{\circ}, \cos \theta = 1, \therefore \textbf{r}.\textbf{s} = |\textbf{r}||\textbf{s}|\)</span></li>
+<li><span class="arithmatex">\(\theta = 90^{\circ}, \cos \theta = 0, \therefore \textbf{r}.\textbf{s} = 0\)</span> (vectors are orthogonal)</li>
+<li><span class="arithmatex">\(\theta = 180^{\circ}, \cos \theta = -1, \therefore \textbf{r}.\textbf{s} = -|\textbf{r}||\textbf{s}|\)</span></li>
+</ul>
+<h3 id="scalar-projection">Scalar Projection</h3>
+<p>Scalar projection of <span class="arithmatex">\(\textbf{s}\)</span> onto <span class="arithmatex">\(\textbf{r}\)</span> (how much <span class="arithmatex">\(\textbf{s}\)</span> goes along <span class="arithmatex">\(\textbf{r}\)</span>):</p>
+<div class="arithmatex">\[
+\frac{\textbf{r}.\textbf{s}}{|\textbf{r}|} = |\textbf{s}| \cos \theta
+\]</div>
+<p>The scalar projection is 0 if the vectors are orthogonal.</p>
+<h3 id="vector-projection">Vector Projection</h3>
+<div class="arithmatex">\[
+\textbf{r} \frac{\textbf{r}.\textbf{s}}{|\textbf{r}||\textbf{r}|} = \textbf{r} \frac{\textbf{r}.\textbf{s}}{\textbf{r}.\textbf{r}}
+\]</div>
+<p>which is the unit length vector <span class="arithmatex">\(\frac{\textbf{r}}{|\textbf{r}|} \times\)</span> scalar projection of <span class="arithmatex">\(\textbf{s}\)</span> onto <span class="arithmatex">\(\textbf{r}\)</span>.</p>
+<p>The triangle inequality states that the sum of any two sides of a triangle must be greater than or equal to the size of the remaining side. For every pair of vectors <span class="arithmatex">\(\textbf{a}\)</span> and <span class="arithmatex">\(\textbf{b}\)</span>:</p>
+<div class="arithmatex">\[
+|\textbf{a}| + |\textbf{b}| \geq |\textbf{a}+\textbf{b}|
+\]</div>
 
               
             </article>
@@ -471,42 +531,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../linear-regression/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Linear Regression" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Linear Regression
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../concepts/dls-course-2/" class="md-footer__link md-footer__link--next" aria-label="Next: Deep Learning Specialisation" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Deep Learning Specialisation
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

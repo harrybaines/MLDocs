@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#linear-regression" class="md-skip">
+        <a href="#implementation" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hi
+              Linear Regression
             
           </span>
         </div>
@@ -256,22 +256,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#linear-regression" class="md-nav__link">
-    Linear Regression
-  </a>
-  
-    <nav class="md-nav" aria-label="Linear Regression">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#implementation" class="md-nav__link">
     Implementation
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
   
 </li>
       
@@ -290,8 +284,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../gradient-descent/" class="md-nav__link">
-        Gradient Descent
+      <a href="../pca/" class="md-nav__link">
+        PCA
       </a>
     </li>
   
@@ -323,14 +317,14 @@
       
       
         <label class="md-nav__link" for="__nav_3">
-          Concepts
+          References
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Concepts" data-md-level="1">
+      <nav class="md-nav" aria-label="References" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          Concepts
+          References
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -340,22 +334,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/dls-course-2/" class="md-nav__link">
-        Deep Learning Specialisation
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../concepts/overfitting-underfitting/" class="md-nav__link">
-        Overfitting/Underfitting
+      <a href="../../references/dls/course-2/" class="md-nav__link">
+        Deep Learning Specialisation Course 2
       </a>
     </li>
   
@@ -493,22 +473,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#linear-regression" class="md-nav__link">
-    Linear Regression
-  </a>
-  
-    <nav class="md-nav" aria-label="Linear Regression">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#implementation" class="md-nav__link">
     Implementation
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
   
 </li>
       
@@ -528,7 +502,7 @@
 
   <h1>Linear Regression</h1>
 
-<h2 id="linear-regression">Linear Regression</h2>
+<p>Linear regression models take the following form:</p>
 <div class="arithmatex">\[
 y = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + ... + \theta_n x_n
 \]</div>
@@ -562,6 +536,35 @@ y = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + ... + \theta_n x_n
 <p class="admonition-title">Normal Equation Complexity</p>
 <p>In practice, it is best to avoid using the Normal Equation due to the computational complexity (<span class="arithmatex">\(\mathrm{O}(\mathrm{n}^3)\)</span>) of inverting the matrix <span class="arithmatex">\(\boldsymbol{\mathrm{X}}\)</span>. This means doubling the number of features increases computation time by <span class="arithmatex">\(2^3 = 8\)</span> times.</p>
 </div>
+<h3 id="_1"></h3>
+<p>Goodness of fit (sum of squares of deviations of fit from the data):</p>
+<div class="arithmatex">\[
+\chi^2 = \sum_i r_i^2 = \sum_i (y_i - mx_i - c)^2
+\]</div>
+<p>Want to minimise <span class="arithmatex">\(\chi^2\)</span>, so differentiate and set to 0:</p>
+<div class="arithmatex">\[
+\begin{equation}
+\nabla \chi^2=\left[\begin{array}{l}
+\frac{\partial \chi^2}{\partial m} \\
+\frac{\partial \chi^2}{\partial c}
+\end{array}\right]=\left[\begin{array}{l}
+-2 \sum_i x_i\left(y_i-m x_i-c\right) \\
+-2 \sum_i\left(y_i-m x_i-c\right)
+\end{array}\right]=\left[\begin{array}{l}
+0 \\
+0
+\end{array}\right]
+\end{equation}
+\]</div>
+<p>After some algebra we get:</p>
+<div class="arithmatex">\[
+\begin{equation}
+\begin{array}{ll}
+m=\frac{\sum(x-\bar{x}) y}{\sum(x-\bar{x})^2} &amp; \sigma_m^2 \simeq \frac{\chi^2}{\sum_i(x_i-\bar{x})^2(n-2)} \\
+c=\bar{y}-m \bar{x} &amp; \sigma_c \simeq \sigma_m \sqrt{\bar{x}^2+\frac{1}{n} \sum_i(x_i-\bar{x})^2}
+\end{array}
+\end{equation}
+\]</div>
 <!-- Give table overview comparison of pros and cons for normal equation etc. -->
 <!-- Custom diagrams and gifs -->
 <!-- !!! note "From scratch implementation"
@@ -627,13 +630,13 @@ y = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + ... + \theta_n x_n
       
       
         
-        <a href="../gradient-descent/" class="md-footer__link md-footer__link--next" aria-label="Next: Gradient Descent" rel="next">
+        <a href="../pca/" class="md-footer__link md-footer__link--next" aria-label="Next: PCA" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Gradient Descent
+              PCA
             </div>
           </div>
           <div class="md-footer__button md-icon">
