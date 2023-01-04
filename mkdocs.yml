@@ -4,34 +4,33 @@ theme:
   name: material
   custom_dir: overrides
   palette:
-    primary: lime
-    scheme: slate
+    scheme: default
   font:
-    text: Open Sans
+    text: CMU Sans Serif # Open Sans
   features:
     - content.tabs.link
     - navigation.top
-    - navigation.sections
+    - navigation.indexes
 extra_css:
   - stylesheets/extra.css
 nav:
   - Home: index.md
   - Algorithms:
-    - Linear Regression: algorithms/linear-regression/index.md
-    - PCA: algorithms/pca/index.md
-  - References:
-    - Deep Learning Specialisation Course 2: references/dls/course-2.md
+      - Linear Regression: algorithms/linear-regression/index.md
+      - PCA: algorithms/pca/index.md
+  - Courses:
+      - Deep Learning Specialisation: courses/dls/index.md
   - Equations:
-    - Norms: equations/norms.md
-  - Reinforcement Learning: 
-    - reinforcement-learning/index.md
+      - Norms: equations/norms.md
+  - Reinforcement Learning:
+      - reinforcement-learning/index.md
 markdown_extensions:
   - tables
   - pymdownx.details
   - admonition
   - attr_list
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
   - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
@@ -41,6 +40,7 @@ markdown_extensions:
       linenums: true
       linenums_style: pymdownx-inline
 extra_javascript:
-  - javascripts/extra.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+plugins:
+  - search

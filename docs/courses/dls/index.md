@@ -1,4 +1,10 @@
-# Deep Learning Specialisation Course 2
+# Deep Learning Specialisation
+
+## Course 1: Neural Networks and Deep Learning
+
+- [Handwritten Notes 📕]()
+
+## Course 2: Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization
 
 On this page you will find summary notes for key concepts covered in the second course of Coursera's [Deep Learning Specialisation](https://www.coursera.org/learn/deep-neural-network?specialization=deep-learning){:target="_blank"} by Andrew Ng. The course coveres Hyperparameter Tuning, Regularisation and Optimisation of Deep Neural Networks.
 
@@ -13,7 +19,7 @@ On this page you will find summary notes for key concepts covered in the second 
 Applied machine learning is highly iterative. We may need to try out many different models, with each having a large number of possible hyperparameter settings. Given a dataset, we generally split the data into 3 subsets:
 
 <div align="center">
-    <img src="../img/train-dev-test.png" width="475" />
+    <img src="./img/train-dev-test.png" width="475" />
 </div>
 <!-- <div align="center">
     <img src="../img/train-test.png" width="475" />
